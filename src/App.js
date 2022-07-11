@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 
 import Header from "./Header";
 import Summary from "./summary/Summary";
@@ -14,6 +14,10 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Summary/>} />
                     <Route path="/detailed" element={<Detailed/>} />
+                    <Route 
+                        path="*" 
+                        element={<Navigate to="/" replace />}
+                    />
                 </Routes>
             </Router>
         </Container>
